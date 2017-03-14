@@ -1,3 +1,4 @@
+/**
 
 Copyright 2011 Rafael Muñoz Salinas. All rights reserved.
 
@@ -24,3 +25,12 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 The views and conclusions contained in the software and documentation are those of the
 authors and should not be interpreted as representing official policies, either expressed
 or implied, of Rafael Muñoz Salinas.
+*/
+
+#ifdef USE_OMP
+#include <omp.h>
+#else
+int omp_get_max_threads();
+int omp_get_thread_num();
+//int omp_set_num_threads(int);
+#endif

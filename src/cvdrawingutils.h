@@ -1,4 +1,4 @@
-
+/*****************************
 Copyright 2011 Rafael Muñoz Salinas. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are
@@ -24,3 +24,27 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 The views and conclusions contained in the software and documentation are those of the
 authors and should not be interpreted as representing official policies, either expressed
 or implied, of Rafael Muñoz Salinas.
+********************************/
+#ifndef _ArUco_DrawUtils_H_
+#define _ArUco_DrawUtils_H_
+#include "exports.h"
+#include "aruco.h"
+namespace aruco {
+/**\brief A set of functions to draw in opencv images
+ */
+class ARUCO_EXPORTS CvDrawingUtils {
+  public:
+
+    static void draw3dAxis(cv::Mat &Image, const CameraParameters &CP, const cv::Mat &Rvec,const cv::Mat &Tvec,float axis_size );
+
+
+    static void draw3dAxis(cv::Mat &Image, Marker &m, const CameraParameters &CP);
+
+    static void draw3dCube(cv::Mat &Image, Marker &m, const CameraParameters &CP, bool setYperpendicular = false);
+
+//    static void draw3dAxis(cv::Mat &Image, MarkerMap &m, const CameraParameters &CP);
+//    static void draw3dCube(cv::Mat &Image, MarkerMap &m, const CameraParameters &CP, bool setYperpendicular = false);
+};
+};
+
+#endif
